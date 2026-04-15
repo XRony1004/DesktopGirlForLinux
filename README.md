@@ -210,6 +210,28 @@ Common options:
 - **Click-through**: `input_shape_combine_region` updated per frame so transparent pixels never intercept mouse events
 
 
+## 快速开始 / Quick Start
+
+```bash
+# 1. 安装依赖 / Install dependencies
+uv venv .venv
+uv pip install --python .venv/bin/python -r requirements.txt \
+  --extra-index-url https://download.pytorch.org/whl/cpu
+
+# 2. 抠图 / Run background removal (RVM)
+.venv/bin/python remove_bg.py --input 你的视频.mp4 --frames-dir dancer/角色名 --overwrite
+
+# 3. 预览抠图效果 / Preview a frame
+eog dancer/角色名/frame_0001.png
+
+# 4. 启动桌面舞者 / Launch desktop dancer
+.venv/bin/python dancer.py
+```
+
+如果有 NVIDIA GPU，可加 `--backend cuda` 加速抠图；4K 视频建议加 `--downsample-ratio 0.125`。
+
+For NVIDIA GPU acceleration, add `--backend cuda`; for 4K video, add `--downsample-ratio 0.125`.
+
 ## 效果展示
 
 ![screenshot 1](screenshot/dd1.png)

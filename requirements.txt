@@ -1,3 +1,5 @@
-backgroundremover
+torch
+torchvision
+scipy
 PyGObject<3.50
 pycairo

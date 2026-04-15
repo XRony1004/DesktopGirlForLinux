@@ -8,3 +8,10 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Local input media and generated dancer frames
+*.mp4
+*.mov
+*.mkv
+*.avi
+dancer/
